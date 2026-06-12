@@ -1,0 +1,120 @@
+body {
+    background-color: #0b0e14; /* Темний крипто-фон */
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    text-align: center;
+    background: #151a26;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 242, 254, 0.2);
+    border: 1px solid #1f293d;
+    width: 320px;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #00f2fe; /* Неоновий блакитний */
+}
+
+.balance-container {
+    font-size: 36px;
+    font-weight: bold;
+    color: #00ff87; /* Неоновий зелений */
+}
+
+.cps-text {
+    color: #a0aec0;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+/* Стилі для монети */
+.coin-wrapper {
+    margin: 40px 0;
+}
+
+#coin-btn {
+    font-size: 80px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.05s ease-in-out;
+    outline: none;
+    user-select: none;
+}
+
+/* Ефект при натисканні на монету */
+#coin-btn:active {
+    transform: scale(0.9);
+}
+
+/* Кнопка в магазині */
+.shop-container {
+    margin-top: 30px;
+    border-top: 1px solid #1f293d;
+    padding-top: 20px;
+}
+
+.shop-btn {
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+.shop-btn:hover {
+    filter: brightness(1.1);
+}
+
+.shop-btn:disabled {
+    background: #2d3748;
+    color: #718096;
+    cursor: not-allowed;
+}
+/* --- АДАПТАЦІЯ ДЛЯ МОБІЛЬНИХ ПРИСТРОЇВ --- */
+/* Якщо ширина екрана менша за 480 пікселів (типовий смартфон) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+        height: auto; /* Щоб на маленьких екранах можна було скролити, якщо треба */
+    }
+
+    .game-container {
+        width: 100%; /* Картка гри розтягується по ширині екрана смартфона */
+        max-width: 340px; /* Але не стає ширшою за адекватні розміри */
+        padding: 20px 15px; /* Зменшуємо внутрішні відступи, щоб зекономити місце */
+        box-shadow: none; /* Прибираємо важкі тіні для кращої роботи на слабких телефонах */
+    }
+
+    h1 {
+        font-size: 24px; /* Трішки зменшуємо заголовок */
+    }
+
+    .balance-container {
+        font-size: 30px; /* Зменшуємо шрифт балансу, щоб великі цифри не вилазили за краї */
+    }
+
+    #coin-btn {
+        font-size: 70px; /* Робимо монетку трішки компактнішою */
+    }
+
+    .shop-btn {
+        padding: 14px 10px; /* Збільшуємо висоту кнопок, бо на телефоні пальцем має бути зручно тапати */
+        font-size: 13px;
+    }
+}

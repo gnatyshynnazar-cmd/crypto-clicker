@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Clicker Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>Crypto Clicker</h1>
+        
+        <div class="balance-container">
+            <span id="balance">0</span> <span class="currency">COIN</span>
+        </div>
+        <p class="cps-text">Пасивний дохід: +<span id="cps-value">0</span> /сек</p>
+
+        <div class="coin-wrapper">
+            <button id="coin-btn">🪙</button>
+        </div>
+
+        <!-- Магазин покращень -->
+        <div class="shop-container">
+            <h3>Магазин відеокарт</h3>
+            <button id="buy-gpu-btn" class="shop-btn">
+                Купити GPU (Ціна: <span id="gpu-cost">15</span> COIN)
+                <br><small>Приносить +1 монету в секунду</small>
+            </button>
+            
+            <!-- ОЦЕ ДОДАЄМО (нова кнопка для ASIC, зробимо відступ зверху через стиль) -->
+            <button id="buy-asic-btn" class="shop-btn" style="margin-top: 10px;">
+                Купити ASIC (Ціна: <span id="asic-cost">100</span> COIN)
+                <br><small>Приносить +10 монет в секунду</small>
+            </button>
+        </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
