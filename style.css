@@ -1,120 +1,202 @@
+/* ІМПОРТ КРУТОГО ШРИФТУ З GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rajdhani', sans-serif;
+    user-select: none; /* Щоб текст не виділявся синім при швидкому тапанні */
+}
+
+/* ГОЛОВНИЙ ФОН З КІБЕРПАНК ГРАДІЄНТОМ */
 body {
-    background-color: #0b0e14; /* Темний крипто-фон */
+    background: radial-gradient(circle at center, #1a1c29 0%, #0e1017 100%);
     color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    overflow: hidden;
 }
 
+/* СТИЛЬНА НЕОНОВА КАРТКА ГРИ */
 .game-container {
+    background: rgba(30, 34, 50, 0.75);
+    backdrop-filter: blur(10px); /* Ефект матового скла */
+    border: 2px solid rgba(0, 242, 254, 0.2);
+    border-radius: 24px;
+    width: 380px;
+    padding: 30px 24px;
     text-align: center;
-    background: #151a26;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 8px 32px 0 rgba(0, 242, 254, 0.2);
-    border: 1px solid #1f293d;
-    width: 320px;
+    box-shadow: 0 0 40px rgba(0, 242, 254, 0.15), inset 0 0 20px rgba(0, 242, 254, 0.05);
 }
 
+/* ТЕХНО-ЗАГОЛОВОК */
 h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #00f2fe; /* Неоновий блакитний */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
 }
 
+p {
+    color: #707993;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* БОМБЕЗНЕОНОВИЙ БАЛАНС */
 .balance-container {
-    font-size: 36px;
-    font-weight: bold;
-    color: #00ff87; /* Неоновий зелений */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    margin: 25px 0;
+    color: #00ff87;
+    text-shadow: 0 0 20px rgba(0, 255, 135, 0.4);
 }
 
-.cps-text {
-    color: #a0aec0;
-    margin-top: 5px;
-    font-size: 14px;
-}
-
-/* Стилі для монети */
-.coin-wrapper {
-    margin: 40px 0;
-}
-
+/* ОНОВЛЕНА КРУТА МОНЕТА СВІТИННЯМ */
 #coin-btn {
-    font-size: 80px;
-    background: none;
-    border: none;
+    background: radial-gradient(circle, #ffe066 0%, #f5b041 100%);
+    font-size: 90px;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    border-radius: 50%;
+    margin: 20px auto;
     cursor: pointer;
-    transition: transform 0.05s ease-in-out;
-    outline: none;
-    user-select: none;
+    box-shadow: 0 0 30px rgba(245, 176, 65, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.6);
+    border: 4px solid #fff;
+    transition: transform 0.05s ease; /* Швидка анімація кліку */
 }
 
-/* Ефект при натисканні на монету */
+/* ЕФЕКТ НАТИСКАННЯ НА МОНЕТУ (вона стискається) */
 #coin-btn:active {
-    transform: scale(0.9);
+    transform: scale(0.92);
 }
 
-/* Кнопка в магазині */
-.shop-container {
-    margin-top: 30px;
-    border-top: 1px solid #1f293d;
-    padding-top: 20px;
-}
-
-.shop-btn {
-    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+/* РОЗДІЛЮВАЧ */
+hr {
     border: none;
-    color: white;
-    padding: 12px 20px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 10px;
-    cursor: pointer;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0, 242, 254, 0.3), transparent);
+    margin: 25px 0;
+}
+
+h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    color: #707993;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* ГЕЙМЕРСЬКІ КНОПКИ МАГАЗИНУ */
+.shop-btn {
     width: 100%;
-    transition: background 0.2s;
+    background: linear-gradient(135deg, #23273a 0%, #171a26 100%);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    color: #fff;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
 }
 
-.shop-btn:hover {
-    filter: brightness(1.1);
+.shop-btn small {
+    color: #707993;
+    display: block;
+    margin-top: 4px;
+    font-weight: 500;
 }
 
+/* Стиль кнопки, коли назбиралося достатньо грошей (АКТИВНА) */
+.shop-btn:not(:disabled) {
+    border-color: #00f2fe;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+    background: linear-gradient(135deg, #1c3647 0%, #171a26 100%);
+}
+
+.shop-btn:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 242, 254, 0.4);
+}
+
+/* Стиль кнопки, коли грошей НЕ вистачає (ВИМКНЕНА) */
 .shop-btn:disabled {
-    background: #2d3748;
-    color: #718096;
+    opacity: 0.4;
     cursor: not-allowed;
+    border-color: rgba(255, 255, 255, 0.05);
 }
-/* --- АДАПТАЦІЯ ДЛЯ МОБІЛЬНИХ ПРИСТРОЇВ --- */
-/* Якщо ширина екрана менша за 480 пікселів (типовий смартфон) */
+
+/* АДАПТАЦІЯ ДЛЯ ТЕЛЕФОНІВ */
 @media (max-width: 480px) {
-    body {
-        padding: 10px;
-        height: auto; /* Щоб на маленьких екранах можна було скролити, якщо треба */
-    }
+    body { padding: 15px; }
+    .game-container { width: 100%; max-width: 350px; }
+    .balance-container { font-size: 36px; }
+    #coin-btn { width: 130px; height: 130px; line-height: 130px; font-size: 80px; }
+}
+/* КЛАС ДЛЯ СТВОРЕННЯ ЦИФРИ, ЩО ВИЛІТАЄ */
+.coin-container {
+    position: relative; /* Щоб цифри вилітали відносно монети */
+    display: inline-block;
+    margin: 20px auto;
+}
 
-    .game-container {
-        width: 100%; /* Картка гри розтягується по ширині екрана смартфона */
-        max-width: 340px; /* Але не стає ширшою за адекватні розміри */
-        padding: 20px 15px; /* Зменшуємо внутрішні відступи, щоб зекономити місце */
-        box-shadow: none; /* Прибираємо важкі тіні для кращої роботи на слабких телефонах */
-    }
+/* Прибираємо старий марджин з самої монети, бо тепер він на контейнері */
+/* ОНОВЛЕНА КРУТА МОНЕТА-КАРТИНКА З НЕОНОВИМ СВІТІННЯМ */
+#coin-btn {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: 0 auto !important;
+    cursor: pointer;
+    display: block;
+    object-fit: contain; /* Щоб картинка всередині кола не деформувалася */
+    padding: 10px; /* Відступ, щоб картинка гарно сиділа всередині неонової рамки */
+    
+    /* Кіберпанк підсвічування */
+    background: radial-gradient(circle, #25293d 0%, #171a26 100%);
+    border: 3px solid #00f2fe;
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.4), inset 0 0 20px rgba(0, 242, 254, 0.2);
+    
+    transition: transform 0.05s ease; /* Швидка анімація кліку */
+}
 
-    h1 {
-        font-size: 24px; /* Трішки зменшуємо заголовок */
-    }
+/* ЕФЕКТ НАТИСКАННЯ */
+#coin-btn:active {
+    transform: scale(0.92);
+}
 
-    .balance-container {
-        font-size: 30px; /* Зменшуємо шрифт балансу, щоб великі цифри не вилазили за краї */
-    }
+.floating-number {
+    position: absolute;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: #ffe066;
+    text-shadow: 0 0 10px rgba(255, 224, 102, 0.8);
+    pointer-events: none; /* Щоб цифри не заважали клікати далі */
+    animation: floatUp 0.6s ease-out forwards;
+}
 
-    #coin-btn {
-        font-size: 70px; /* Робимо монетку трішки компактнішою */
+/* АНІМАЦІЯ: політ вгору + прозорість */
+@keyframes floatUp {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) translateY(0) scale(1);
     }
-
-    .shop-btn {
-        padding: 14px 10px; /* Збільшуємо висоту кнопок, бо на телефоні пальцем має бути зручно тапати */
-        font-size: 13px;
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) translateY(-100px) scale(0.8);
     }
 }

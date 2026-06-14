@@ -16,19 +16,28 @@
         </div>
         <p class="cps-text">Пасивний дохід: +<span id="cps-value">0</span> /сек</p>
 
-        <div class="coin-wrapper">
-            <button id="coin-btn">🪙</button>
+        <!-- Знайди це місце у коді і зроби ось так: -->
+        <div class="coin-container">
+            <img id="coin-btn" src="https://img.icons8.com/neon/150/bitcoin.png" alt="Crypto Coin">
         </div>
 
         <!-- Магазин покращень -->
         <div class="shop-container">
-            <h3>Магазин відеокарт</h3>
+            <h3>Магазин покращень</h3>
+            
+            <!-- КНОПКА 1: МУЛЬТИ-ТАП -->
+            <button id="buy-click-btn" class="shop-btn" style="margin-bottom: 10px;">
+                Мульти-тап (Ціна: <span id="click-cost">50</span> COIN)
+                <br><small>Збільшує силу кліку на +1</small>
+            </button>
+
+            <!-- КНОПКА 2: GPU -->
             <button id="buy-gpu-btn" class="shop-btn">
                 Купити GPU (Ціна: <span id="gpu-cost">15</span> COIN)
                 <br><small>Приносить +1 монету в секунду</small>
             </button>
             
-            <!-- ОЦЕ ДОДАЄМО (нова кнопка для ASIC, зробимо відступ зверху через стиль) -->
+            <!-- КНОПКА 3: ASIC (Тільки одна!) -->
             <button id="buy-asic-btn" class="shop-btn" style="margin-top: 10px;">
                 Купити ASIC (Ціна: <span id="asic-cost">100</span> COIN)
                 <br><small>Приносить +10 монет в секунду</small>
